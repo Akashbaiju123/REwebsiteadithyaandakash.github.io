@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan 450 - Royal Enfield</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // JavaScript for changing the image based on selected color variant
+    function changeVariantImage() {
+      const variantSelect = document.getElementById("colorSelect");
+      const imageContainer = document.getElementById("variantImage");
+
+      const selectedColor = variantSelect.value;
+      const images = {
+        "black": "images/himalayan-450-black.jpg",
+        "blue": "images/himalayan-450-blue.jpg",
+        "white": "images/himalayan-450-white.jpg"
+      };
+
+      imageContainer.src = images[selectedColor] || images["black"];
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Royal Enfield Logo"> ROYAL ENFIELD</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="motorcycles.html">Motorcycles</a></li>
+        <li><a href="apparels.html">Apparels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="motorcycle-detail">
+    <h2 class="section-heading">Himalayan 450</h2>
+    <!-- Motorcycle Image and Description -->
+    <section class="motorcycle-section">
+      <div class="motorcycle-left">
+        <img id="variantImage" src="images/himalayan-450.jpg" alt="Himalayan 450">
+      </div>
+      <div class="motorcycle-right">
+        <h2 class="product-title">Himalayan 450</h2>
+        <p class="product-price">₹269,000.00 - ₹289,000.00</p>
+        <p class="product-description">
+            The Royal Enfield Himalayan 450 is an adventure bike from the Chennai-based manufacturer. The ADV is a successor to the now-discontinued Himayalan 411 and features the Royal Enfield’s first-ever liquid-cooled, single-cylinder engine. It can easily handle everyday commutes, long-distance touring, and hardcore off-riding. 
+        </p>
+
+        <!-- Color Variant Selection -->
+        <label for="colorSelect">Choose Color:</label>
+        <select id="colorSelect" onchange="changeVariantImage()">
+            <option value="black" selected>Hanle Black</option>
+            <option value="blue">Slate Poppy Blue</option>
+            <option value="white">Kamet White</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- More Details Section -->
+    <section class="review">
+      <h3>Review</h3>
+      <div class="review-image">
+        <img src="images/R5.png" alt="Review">
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Royal Enfield. All rights reserved.</p>
+    <div class="social-media-icons">
+      <a href="https://www.facebook.com/RoyalEnfield/" target="_blank"><img src="images/facebook.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://www.instagram.com/royalenfield/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://x.com/royalenfield" target="_blank"><img src="images/x.png" alt="X" class="social-icon"></a>
+      <a href="https://www.youtube.com/channel/UCyxUUHqmz9IiAnrROJc0mag" target="_blank"><img src="images/youtube.png" alt="YouTube" class="social-icon"></a>
+    </div>
+  </footer>
+</body>
+</html>

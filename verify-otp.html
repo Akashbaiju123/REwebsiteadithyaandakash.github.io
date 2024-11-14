@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify OTP - Royal Enfield</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Royal Enfield Logo"> ROYAL ENFIELD</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="motorcycles.html">Motorcycles</a></li>
+        <li><a href="apparels.html">Apparels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-links">
+        <a href="signin.html" class="auth-button">Sign In</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="centered-form">
+    <h2>Verify OTP</h2>
+    <form id="otpForm">
+      <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+      <button type="submit">Verify OTP</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('otpForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const otp = document.getElementById('otp').value;
+
+      window.location.href = 'reset-password.html';
+
+
+      // API call to verify OTP
+      fetch('https://localhost:3000/verify-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ otp }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('OTP verified!');
+          window.location.href = 'reset-password.html';
+        } else {
+          alert('Invalid OTP. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>

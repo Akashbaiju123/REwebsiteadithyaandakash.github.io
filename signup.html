@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Royal Enfield</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Royal Enfield Logo"> ROYAL ENFIELD</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="motorcycles.html">Motorcycles</a></li>
+        <li><a href="apparels.html">Apparels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-links">
+        <a href="signin.html" class="auth-button">Sign In</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="centered-form">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="form-links">
+      <p>Already have an account? <a href="signin.html">Sign In</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+    
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+    
+        // Simple validation
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!name || !email || !password) {
+          alert('Please fill in all fields.');
+          return;
+        }
+        
+        if (!emailPattern.test(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // At least 8 characters, at least one letter and one number
+        if (!passwordPattern.test(password)) {
+        alert('Password must be at least 8 characters long and contain at least one letter and one number.');
+        return;
+        }
+    
+        fetch('http://localhost:3000/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, password }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            // Store user session data (name, email, and user ID)
+            localStorage.setItem('user', JSON.stringify(data.user));
+    
+            alert('Sign up successful!');
+            window.location.href = 'signin.html';  // Redirect to sign-in page
+          } else {
+            alert('Error: ' + data.message);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+        });
+    });    
+  </script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Royal Enfield. All rights reserved.</p>
+    <div class="social-media-icons">
+      <a href="https://www.facebook.com/RoyalEnfield/" target="_blank"><img src="images/facebook.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://www.instagram.com/royalenfield/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://x.com/royalenfield" target="_blank"><img src="images/x.png" alt="X" class="social-icon"></a>
+      <a href="https://www.youtube.com/channel/UCyxUUHqmz9IiAnrROJc0mag" target="_blank"><img src="images/youtube.png" alt="YouTube" class="social-icon"></a>
+    </div>
+  </footer>
+
+ 

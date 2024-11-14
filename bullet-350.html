@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bullet 350 - Royal Enfield</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // JavaScript for changing the image based on selected color variant
+    function changeVariantImage() {
+      const variantSelect = document.getElementById("colorSelect");
+      const imageContainer = document.getElementById("variantImage");
+
+      const selectedColor = variantSelect.value;
+      const images = {
+        "maroon": "images/bullet-350-maroon.jpg",
+        "black": "images/bullet-350-black.jpg",
+        "red": "images/bullet-350-red.jpg"
+      };
+
+      imageContainer.src = images[selectedColor] || images["maroon"];
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Royal Enfield Logo"> ROYAL ENFIELD</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="motorcycles.html">Motorcycles</a></li>
+        <li><a href="apparels.html">Apparels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="motorcycle-detail">
+    <h2 class="section-heading">Bullet 350</h2>
+    <!-- Motorcycle Image and Description -->
+    <section class="motorcycle-section">
+      <div class="motorcycle-left">
+        <img id="variantImage" src="images/bullet-350.jpg" alt="Bullet 350">
+      </div>
+      <div class="motorcycle-right">
+        <h2 class="product-title">Bullet 350</h2>
+        <p class="product-price">₹172,000.00 - ₹182,000.00</p>
+        <p class="product-description">
+            The Royal Enfield Bullet 350, is one of the most popular retro-roadster bikes in India. It is one of the most iconic motorcycles ever sold by Royal Enfield and holds the unofficial title of the world’s longest-running production bike, as it has been produced continuously since 1931. The Bullet 350 continues with the authentic retro design with chrome and gold highlights, a halogen headlight, an analogue speedometer, and a single-piece seat. It gets the same 350cc engine from the Royal Enfield Classic 350.
+        </p>
+
+        <!-- Color Variant Selection -->
+        <label for="colorSelect">Choose Color:</label>
+        <select id="colorSelect" onchange="changeVariantImage()">
+            <option value="maroon" selected>Standard Maroon</option>
+            <option value="black">Black Gold</option>
+            <option value="red">Military Red</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- More Details Section -->
+    <section class="review">
+      <h3>Review</h3>
+      <div class="review-image">
+        <img src="images/R8.png" alt="Review">
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Royal Enfield. All rights reserved.</p>
+    <div class="social-media-icons">
+      <a href="https://www.facebook.com/RoyalEnfield/" target="_blank"><img src="images/facebook.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://www.instagram.com/royalenfield/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://x.com/royalenfield" target="_blank"><img src="images/x.png" alt="X" class="social-icon"></a>
+      <a href="https://www.youtube.com/channel/UCyxUUHqmz9IiAnrROJc0mag" target="_blank"><img src="images/youtube.png" alt="YouTube" class="social-icon"></a>
+    </div>
+  </footer>
+</body>
+</html>

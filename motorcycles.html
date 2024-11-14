@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motorcycles - Royal Enfield</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script> <!-- Add script.js for filtering functionality -->
+</head>
+<body style="background-color: white;">
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Royal Enfield Logo"> ROYAL ENFIELD</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="motorcycles.html">Motorcycles</a></li>
+        <li><a href="apparels.html">Apparels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="motorcycles-page">
+    <h2 class="section-heading">Motorcycles</h2>
+    <!-- Filter Section -->
+    <aside class="filter-section">
+      <h2>Filter by:</h2>
+      <form id="filter-form">
+        <!-- Price Filter -->
+        <h3>Price: </h3>
+        <div class="price-range-container">
+          <input type="number" id="minPriceValue" value="149900">
+          <span class="price-range-separator">-</span>
+          <span></span>
+          <input type="number" id="maxPriceValue" value="394347">
+        </div>
+        <div class="button-container">
+          <button id="apply-filter-button">Apply Filter</button>
+          <button id="reset-button">Reset</button>
+        </div>
+      </form>
+    </aside>
+
+    <!-- Motorcycles Listing -->
+    <section class="motorcycles-list" id="motorcycles-list">
+      <div class="product" data-price="359430" data-variant="Shotgun 650">
+        <img src="images/shotgun-650.jpg" alt="Shotgun 650">
+        <h3>Shotgun 650</h3>
+        <p>₹359,430.00 - ₹373,000.00</p>
+        <a href="shotgun-650.html" class="explore-button">Explore</a>
+      </div>
+
+      <div class="product" data-price="363900" data-variant="Super Meteor 650">
+        <img src="images/super-meteor-650.jpg" alt="Super Meteor 650">
+        <h3>Super Meteor 650</h3>
+        <p>₹363,900.00 - ₹394,347.00</p>
+        <a href="super-meteor-650.html" class="explore-button">Explore</a>
+      </div>
+
+      <div class="product" data-price="319000" data-variant="Continental GT 650">
+        <img src="images/continental-gt-650.jpg" alt="Continental GT 650">
+        <h3>Continental GT 650</h3>
+        <p>₹319,000.00 - ₹349,000.00</p>
+        <a href="continental-gt-650.html" class="explore-button">Explore</a>
+      </div>
+
+      <div class="product" data-price="149900" data-variant="Hunter 350">
+        <img src="images/hunter-350.jpg" alt="Hunter 350">
+        <h3>Hunter 350</h3>
+        <p>₹149,900.00 - ₹174,655.00</p>
+        <a href="hunter-350.html" class="explore-button">Explore</a>
+      </div>
+
+      <div class="product" data-price="285000" data-variant="Himalayan 450">
+        <img src="images/himalayan-450.jpg" alt="Himalayan 450">
+        <h3>Himalayan 450</h3>
+        <p>₹285,000.00 - ₹298,000.00</p>
+        <a href="himalayan-450.html" class="explore-button">Explore</a>
+      </div>
+
+      <div class="product" data-price="303000" data-variant="Interceptor 650">
+        <img src="images/interceptor-650.jpg" alt="INTERCEPTOR 650">
+        <h3>Interceptor 650</h3>
+        <p>₹303,000.00 - ₹321,000.00</p>
+        <a href="interceptor-650.html" class="explore-button">Explore</a>
+      </div>
+
+      <div class="product" data-price="206394" data-variant="Scram 411">
+        <img src="images/scram-411.jpg" alt="Scram 411">
+        <h3>Scram 411</h3>
+        <p>₹206,394.00 - ₹211,984.00</p>
+        <a href="scram-411.html" class="explore-button">Explore</a>
+      </div>
+
+      <div class="product" data-price="173562" data-variant="Bullet 350">
+        <img src="images/bullet-350.jpg" alt="Bullet 350">
+        <h3>Bullet 350</h3>
+        <p>₹173,562.00 - ₹215,801.00</p>
+        <a href="bullet-350.html" class="explore-button">Explore</a>
+      </div>
+
+      <div id="no-results" style="display: none; text-align: center;">
+        <h2 style="font-size: 24px; color: black; font-weight: bold;">No Results Found!</h2>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Royal Enfield. All rights reserved.</p>
+    <div class="social-media-icons">
+      <a href="https://www.facebook.com/RoyalEnfield/" target="_blank"><img src="images/facebook.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://www.instagram.com/royalenfield/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://x.com/royalenfield" target="_blank"><img src="images/x.png" alt="X" class="social-icon"></a>
+      <a href="https://www.youtube.com/channel/UCyxUUHqmz9IiAnrROJc0mag" target="_blank"><img src="images/youtube.png" alt="YouTube" class="social-icon"></a>
+    </div>
+  </footer>
+
+</body>
+</html>

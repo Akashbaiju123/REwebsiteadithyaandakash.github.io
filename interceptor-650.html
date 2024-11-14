@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interceptor 650 - Royal Enfield</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // JavaScript for changing the image based on selected color variant
+    function changeVariantImage() {
+      const variantSelect = document.getElementById("colorSelect");
+      const imageContainer = document.getElementById("variantImage");
+
+      const selectedColor = variantSelect.value;
+      const images = {
+        "red": "images/interceptor-650-red.jpg",
+        "blue": "images/interceptor-650-blue.jpg",
+        "green": "images/interceptor-650-green.jpg"
+      };
+
+      imageContainer.src = images[selectedColor] || images["green"];
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Royal Enfield Logo"> ROYAL ENFIELD</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="motorcycles.html">Motorcycles</a></li>
+        <li><a href="apparels.html">Apparels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="motorcycle-detail">
+    <h2 class="section-heading">Interceptor 650</h2>
+    <!-- Motorcycle Image and Description -->
+    <section class="motorcycle-section">
+      <div class="motorcycle-left">
+        <img id="variantImage" src="images/interceptor-650.jpg" alt="Interceptor 650">
+      </div>
+      <div class="motorcycle-right">
+        <h2 class="product-title">Interceptor 650</h2>
+        <p class="product-price">₹419,000.00 - ₹449,000.00</p>
+        <p class="product-description">
+            The Royal Enfield Interceptor 650 is one of the first motorcycles to be based on Royal Enfield's 650cc, paralell-twin cylinder platform. The retro roadster looks along with the dual exhausts give it a commanding road presence.
+        </p>
+
+        <!-- Color Variant Selection -->
+        <label for="colorSelect">Choose Color:</label>
+        <select id="colorSelect" onchange="changeVariantImage()">
+            <option value="red" selected>Canyon Red</option>
+            <option value="blue">Barcelona Blue</option>
+            <option value="green">Cali Green</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- More Details Section -->
+    <section class="review">
+      <h3>Review</h3>
+      <div class="review-image">
+        <img src="images/R6.png" alt="Review">
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Royal Enfield. All rights reserved.</p>
+    <div class="social-media-icons">
+      <a href="https://www.facebook.com/RoyalEnfield/" target="_blank"><img src="images/facebook.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://www.instagram.com/royalenfield/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://x.com/royalenfield" target="_blank"><img src="images/x.png" alt="X" class="social-icon"></a>
+      <a href="https://www.youtube.com/channel/UCyxUUHqmz9IiAnrROJc0mag" target="_blank"><img src="images/youtube.png" alt="YouTube" class="social-icon"></a>
+    </div>
+  </footer>
+</body>
+</html>
